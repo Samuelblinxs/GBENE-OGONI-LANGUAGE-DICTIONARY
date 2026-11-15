@@ -1,0 +1,365 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khana - First Ogoni Dictionary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <div class="logo"> <h1>GBENE OGONI </h1>
+        <P>
+<span id="typing"></span>
+</P>
+    </div>
+    <!-- HERO -->
+    <nav>
+        <button class="active" data-tab="dictionary">Dictionary</button>
+        <button data-tab="contribute">Contribute</button>
+        <button data-tab="challenge">Challenge</button>
+    </nav>
+    <div class="avatar" id="dashboardAvatar">K</div>
+  </header>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+  body{background:#0a0f0d;color:#e5e7eb;line-height:1.6;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  /* HEADER */
+  header{display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:#0a0f0d;position:sticky;top:0;z-index:20;border-bottom:1px solid #1f2937}
+  .logo{line-height:1}
+  .logo h1{font-size:26px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#a3e635,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .logo span{font-size:12px;color:#a3e635;font-weight:700;letter-spacing:2px}
+  nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  nav a{padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;color:#d1d5db}
+  nav a.active,nav a:hover{background:#f8fafc;color:#111}
+  .avatar{width:38px;height:38px;background:linear-gradient(135deg,#a3e635,#22c55e);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;cursor:pointer}
+
+  /* ANIMATION */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  @keyframes fillBar{from{width:0}to{width:var(--w)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  .anim{animation:fadeUp .6s ease both}
+  .anim2{animation:fadeUp .6s .1s ease both}
+  .anim3{animation:fadeUp .6s .2s ease both}
+  .anim4{animation:fadeUp .6s .3s ease both}
+
+  .wrap{max-width:1100px;margin:auto;padding:28px 5% 60px}
+  /* 1. PROFILE */
+  .profile{background:linear-gradient(135deg,#14532d,#0f1f16 60%,#141b18);border:1px solid #22c55e33;border-radius:22px;padding:28px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;position:relative;overflow:hidden}
+  .profile::after{content:"GBENE";position:absolute;right:-10px;bottom:-18px;font-size:110px;font-weight:900;color:#ffffff08;letter-spacing:-2px}
+  .big-avatar{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#a3e635,#22c55e);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;color:#000;border:3px solid #fff;flex-shrink:0;animation:float 3s ease-in-out infinite}
+  .profile h2{font-size:30px;color:#fff;line-height:1.1}
+  .profile h2 span{color:#a3e635}
+  .profile p{color:#cbd5e1;font-size:14px}
+  .badge-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .badge{background:#a3e635;color:#000;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:800}
+  .badge.outline{background:transparent;border:1px solid #4ade80;color:#a3e635}
+  .level-box{margin-left:auto;text-align:right}
+  .level-box b{font-size:28px;color:#fff}
+  .level-box p{font-size:12px;color:#9ca3af}
+  .progress{width:220px;height:10px;background:#1f2937;border-radius:999px;overflow:hidden;margin-top:8px}
+  .progress div{height:100%;background:linear-gradient(90deg,#4ade80,#a3e635);border-radius:999px;animation:fillBar 1.2s ease forwards;--w:65%}
+
+  /* 2. STATS */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:20px 0}
+  .stat{background:#141b18;border:1px solid #222f29;border-radius:18px;padding:20px;transition:.3s;cursor:pointer}
+  .stat:hover{transform:translateY(-5px);border-color:#a3e635}
+  .stat span{font-size:28px}
+  .stat h3{font-size:30px;color:#fff;margin:6px 0 2px}
+  .stat p{font-size:13px;color:#9ca3af}
+  .stat small{color:#a3e635;font-weight:700;font-size:12px}
+  .fire{animation:pulse 1.5s infinite}
+
+  /* GRID */
+  .grid{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;align-items:start}
+  .card{background:#141b18;border:1px solid #222f29;border-radius:18px;padding:22px;margin-bottom:18px}
+  .card h3{color:#fff;font-size:19px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .card h3 a{font-size:13px;color:#a3e635}
+  .card p{color:#cbd5e1;font-size:14.5px}
+
+  /* 3. CONTINUE */
+  .wod{background:linear-gradient(135deg,#14532d,#1a2e22);border:1px solid #22c55e;border-radius:16px;padding:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+  .wod b{font-size:24px;color:#fff}
+  .wod span{color:#a3e635;font-size:14px}
+  .play{width:52px;height:52px;border-radius:50%;background:#a3e635;color:#000;border:none;font-size:22px;cursor:pointer;flex-shrink:0;transition:.2s}
+  .play:hover{transform:scale(1.1)}
+  .btn{padding:12px 18px;border-radius:999px;font-weight:800;font-size:14px;border:none;cursor:pointer}
+  .btn-green{background:linear-gradient(90deg,#4ade80,#a3e635);color:#000}
+  .btn-dark{background:transparent;border:1px solid #374151;color:#fff}
+  .fav-item{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #222f29}
+  .fav-item:last-child{border:none}
+  .fav-item b{color:#fff}
+  .fav-item span{color:#9ca3af;font-size:13px}
+
+  /* 4. CONTRIBUTIONS */
+  .table-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #222f29;gap:10px}
+  .pill{padding:5px 10px;border-radius:999px;font-size:11px;font-weight:800;white-space:nowrap}
+  .ok{background:#14532d;color:#a3e635}
+  .wait{background:#3b2a00;color:#fbbf24}
+  .no{background:#3f1d1d;color:#fca5a5}
+
+  /* 5. BADGES */
+  .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center}
+  .badge-card{background:#1a231f;border:1px solid #222f29;border-radius:14px;padding:16px 8px;transition:.3s}
+  .badge-card:hover{transform:scale(1.05);border-color:#a3e635}
+  .badge-card.locked{opacity:.45;filter:grayscale(1)}
+  .badge-card div{font-size:28px}
+  .badge-card b{font-size:12px;color:#fff;display:block;margin-top:6px}
+  .badge-card p{font-size:11px;color:#9ca3af}
+
+  /* 6. SETTINGS */
+  .setting{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #222f29}
+  .setting:last-child{border:none}
+  select,input[type="text"]{background:#2a332e;border:1px solid #374151;color:#fff;padding:9px 12px;border-radius:10px;font-size:13px;outline:none}
+  .logout{width:100%;margin-top:14px;background:#7f1d1d;color:#fff}
+
+  footer{text-align:center;padding:24px;color:#6b7280;font-size:13px}
+  @media(max-width:850px){.stats{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.badges{grid-template-columns:1fr 1fr}.level-box{margin-left:0;text-align:left}.profile::after{display:none}}
+  @media(max-width:520px){header{flex-direction:column;gap:12px}.stats{grid-template-columns:1fr}.profile h2{font-size:24px}.progress{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 1. PROFILE -->
+  <div class="profile anim">
+    <div class="big-avatar" id="profileAvatar">K</div>
+    <div>
+      <h2 id="welcomeTitle">Welcome back, <span>User 👋</span></h2>
+      <p id="profileMeta">Bori • Khana • Joined March 2026</p>
+      <div class="badge-row" id="profileBadges">
+        <span class="badge">✦ Guest</span>
+        <span class="badge outline">🏆 Contributor</span>
+        <span class="badge outline">🔥 5-Day Streak</span>
+      </div>
+    </div>
+    <div class="level-box">
+      <p>LEVEL 2 • 65% TO LEVEL 3</p>
+      <b id="userXp">650 XP</b>
+      <div class="progress"><div></div></div>
+      <p style="margin-top:6px">350 XP to Elder Level</p>
+    </div>
+  </div>
+
+  <!-- 2. STATS -->
+  <div class="stats anim2">
+    <div class="stat"><span>📚</span><h3 id="wordsLearnedStat">0 / 2000</h3><p>Words Learned</p><small id="wordsLearnedNote">+0 today ↑</small></div>
+    <div class="stat"><span>✍️</span><h3 id="wordsContributedStat">0 Words</h3><p>Words Contributed</p><small id="wordsContributedNote">0 Approved • 0 Pending</small></div>
+    <div class="stat"><span class="fire">🔥</span><h3 id="dayStreakStat">0 Days</h3><p>Day Streak</p><small id="streakNote">Best: 0 days</small></div>
+    <div class="stat"><span>🏆</span><h3 id="leaderboardRankStat">#0</h3><p>Leaderboard Rank</p><small id="leaderboardNote">Top 10 Contributors</small></div>
+  </div>
+
+  <div class="grid">
+
+    <div>
+      <!-- 3. CONTINUE LEARNING -->
+      <div class="card anim3">
+        <h3>Continue Learning <a href="challenge.html">View all →</a></h3>
+        <div class="wod">
+          <div><span>WORD OF THE DAY</span><br><b>Koo = Water</b><br><span>Example: Mee koo — Give me water</span></div>
+          <button class="play" onclick="alert('Playing: Koo')">▶</button>
+        </div>
+        <p>🎯 <b style="color:#fff">Quiz:</b> You stopped at Question 3/5 — <b style="color:#a3e635">Continue Quiz →</b></p>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+          <button class="btn btn-green" onclick="window.location.href='challenge.html'">Continue Quiz →</button>
+          <button class="btn btn-dark" onclick="window.location.href='contribute.html'">+ Add New Word</button>
+        </div>
+        <h3 style="margin-top:22px">My Favourites ❤️</h3>
+        <div class="fav-item"><div><b>Koo</b> <span>— Water</span></div><span>▶ • ❤️</span></div>
+        <div class="fav-item"><div><b>Baa</b> <span>— Two</span></div><span>▶ • ❤️</span></div>
+        <div class="fav-item"><div><b>Alee</b> <span>— Proverb</span></div><span>▶ • ❤️</span></div>
+      </div>
+
+      <!-- 4. MY CONTRIBUTIONS -->
+      <div class="card anim3">
+        <h3>My Contributions <a href="contribute.html">+ Add Word</a></h3>
+        <div id="myContributionList">
+          <div class="table-row"><div><b style="color:#fff">No words added yet</b> <span style="color:#9ca3af">— Start contributing</span></div><span class="pill wait">⏳ Waiting</span></div>
+        </div>
+        <p style="margin-top:12px;font-size:13px;color:#9ca3af">Tip: Approved words go live on the Dictionary instantly.</p>
+      </div>
+
+      <!-- 5. ACHIEVEMENTS -->
+      <div class="card anim4">
+        <h3>My Achievements <a href="#">2 of 6 Unlocked</a></h3>
+        <div class="badges">
+          <div class="badge-card"><div>🌱</div><b>First Word</b><p>Add 1 word</p></div>
+          <div class="badge-card"><div>🔥</div><b>7-Day Streak</b><p>Learn 7 days</p></div>
+          <div class="badge-card locked"><div>🎤</div><b>Elder's Voice</b><p>Record 5 audios</p></div>
+          <div class="badge-card locked"><div>👑</div><b>Community Hero</b><p>50 approved words</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <!-- LEADERBOARD MINI -->
+      <div class="card anim3">
+        <h3>Leaderboard 🏆 <a href="#">View all</a></h3>
+        <div class="fav-item"><div><b>1. Barina D.</b> <span>— 48 words</span></div><span>🥇</span></div>
+        <div class="fav-item"><div><b>2. Nwinee K.</b> <span>— 32 words</span></div><span>🥈</span></div>
+        <div class="fav-item"><div><b>3. Gokana P.</b> <span>— 21 words</span></div><span>🥉</span></div>
+        <div class="fav-item" style="background:#14532d;border-radius:10px;padding:12px"><div><b id="leaderboardYou">4. You</b> <span>— 12 words</span></div><span>🔥</span></div>
+      </div>
+
+      <!-- 6. SETTINGS -->
+      <div class="card anim4">
+        <h3>Settings ⚙️</h3>
+        <div class="setting"><span>Dialect</span><select><option>Khana</option><option>Gokana</option><option>Eleme</option><option>Tai</option></select></div>
+        <div class="setting"><span>Village / LGA</span><input id="userLocationInput" type="text" value="Bori, Khana" style="width:130px"></div>
+        <div class="setting"><span>Show Language</span><select><option>English + Ogoni</option><option>Ogoni Only</option></select></div>
+        <div class="setting"><span>Daily Reminder</span><select><option>8:00 AM</option><option>6:00 PM</option><option>Off</option></select></div>
+        <div class="setting"><span>Change Password</span><a href="#" style="color:#a3e635;font-weight:700;font-size:13px">Change →</a></div>
+        <button class="btn logout" onclick="logoutUser()">Logout</button>
+      </div>
+
+      <div class="card" style="background:linear-gradient(135deg,#14532d,#1a2e22);border-color:#22c55e;text-align:center">
+        <h3 style="justify-content:center">Share Gbene Ogoni 💚</h3>
+        <p>Invite 1 Ogoni friend, you both get +50 XP</p>
+        <button class="btn btn-green" style="margin-top:12px;width:100%" onclick="alert('Link copied: gbene-ogoni.com')">Copy Invite Link</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>© 2026 Gbene Ogoni — Preserve Ogoni for the next generation.</footer>
+
+<script>
+  function getStoredAccount() {
+    const name = localStorage.getItem('gbene_user_name') || localStorage.getItem('khana_name') || 'User';
+    const email = localStorage.getItem('gbene_user_email') || localStorage.getItem('khana_email') || 'user@example.com';
+    const role = localStorage.getItem('khana_role') || 'Contributor';
+    const location = localStorage.getItem('gbene_user_location') || localStorage.getItem('user_location') || 'Bori, Khana';
+    const createdAt = localStorage.getItem('gbene_created_at') || localStorage.getItem('khana_created_at') || new Date().toISOString();
+    const account = {
+      name,
+      email,
+      role,
+      location,
+      createdAt
+    };
+
+    return account;
+  }
+
+  function logoutUser() {
+    ['gbene_logged_in','gbene_user_name','gbene_user_email','gbene_user_location','gbene_created_at',
+     'khana_logged','khana_name','khana_email','khana_role','khana_created_at','user_location']
+      .forEach(key => localStorage.removeItem(key));
+    window.location.href = 'Login.html';
+  }
+
+  const savedLoggedIn = localStorage.getItem('gbene_logged_in') || localStorage.getItem('khana_logged');
+  const account = getStoredAccount();
+
+  if (savedLoggedIn !== 'true') {
+    window.location.href = 'Login.html';
+  }
+
+  const welcomeTitle = document.getElementById('welcomeTitle');
+  const profileMeta = document.getElementById('profileMeta');
+  const profileAvatar = document.getElementById('profileAvatar');
+  const dashboardAvatar = document.getElementById('dashboardAvatar');
+  const leaderboardYou = document.getElementById('leaderboardYou');
+  const userLocationInput = document.getElementById('userLocationInput');
+  const wordsLearnedStat = document.getElementById('wordsLearnedStat');
+  const wordsLearnedNote = document.getElementById('wordsLearnedNote');
+  const wordsContributedStat = document.getElementById('wordsContributedStat');
+  const wordsContributedNote = document.getElementById('wordsContributedNote');
+  const dayStreakStat = document.getElementById('dayStreakStat');
+  const streakNote = document.getElementById('streakNote');
+  const leaderboardRankStat = document.getElementById('leaderboardRankStat');
+  const leaderboardNote = document.getElementById('leaderboardNote');
+  const myContributionList = document.getElementById('myContributionList');
+
+  if (welcomeTitle) {
+    welcomeTitle.innerHTML = 'Welcome back, <span>' + account.name + ' 👋</span>';
+  }
+
+  if (profileAvatar) {
+    profileAvatar.textContent = (account.name || 'U').charAt(0).toUpperCase();
+  }
+
+  if (dashboardAvatar) {
+    dashboardAvatar.textContent = (account.name || 'U').charAt(0).toUpperCase();
+    dashboardAvatar.setAttribute('aria-label', `${account.name} profile`);
+  }
+
+  document.querySelectorAll('header nav button[data-tab]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const tab = button.dataset.tab;
+      const destination = tab === 'contribute' ? 'contribute.html'
+        : tab === 'challenge' ? 'challenge.html'
+          : 'index.html';
+      window.location.href = destination;
+    });
+  });
+
+  if (profileMeta) {
+    const joinedDate = new Date(account.createdAt);
+    const month = joinedDate.toLocaleString('en-US', { month: 'long' });
+    const year = joinedDate.getFullYear();
+    profileMeta.textContent = `${account.location} • ${account.role} • Joined ${month} ${year}`;
+  }
+
+  const profileBadges = document.getElementById('profileBadges');
+  if (profileBadges) {
+    profileBadges.innerHTML = `
+      <span class="badge">✦ ${account.role}</span>
+      <span class="badge outline">🏆 Contributor</span>
+      <span class="badge outline">🔥 Active Member</span>
+    `;
+  }
+
+  if (leaderboardYou) {
+    leaderboardYou.textContent = '4. You (' + account.name.split(' ')[0] + ')';
+  }
+
+  if (userLocationInput) {
+    userLocationInput.value = account.location;
+  }
+
+  const savedCustomWords = (() => {
+    try {
+      const raw = localStorage.getItem('gbene_custom_words');
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      return [];
+    }
+  })();
+  const contributionCount = savedCustomWords.length;
+  const learnedCount = Math.min(2000, 30 + contributionCount * 5);
+  const streakDays = Math.max(1, Math.min(30, contributionCount + 2));
+  const rank = Math.max(1, 10 - Math.min(9, contributionCount));
+
+  if (wordsLearnedStat) wordsLearnedStat.textContent = `${learnedCount} / 2000`;
+  if (wordsLearnedNote) wordsLearnedNote.textContent = `+${Math.max(0, contributionCount)} today ↑`;
+  if (wordsContributedStat) wordsContributedStat.textContent = `${contributionCount} Words`;
+  if (wordsContributedNote) wordsContributedNote.textContent = `${Math.max(0, contributionCount - 1)} Approved • ${Math.min(2, contributionCount)} Pending`;
+  if (dayStreakStat) dayStreakStat.textContent = `${streakDays} Days`;
+  if (streakNote) streakNote.textContent = `Best: ${streakDays + 5} days`;
+  if (leaderboardRankStat) leaderboardRankStat.textContent = `#${rank}`;
+  if (leaderboardNote) leaderboardNote.textContent = `Top ${Math.max(5, 10 - contributionCount)} Contributors`;
+
+  if (myContributionList) {
+    const items = savedCustomWords.length
+      ? savedCustomWords.slice(0, 4).map((word, index) => {
+          const english = word.english || word.en || 'Word';
+          const ogoni = word.ogoni || word.khana || word.kh || 'Ogoni';
+          const state = index % 2 === 0 ? '✅ Approved' : '⏳ Waiting';
+          const pillClass = index % 2 === 0 ? 'ok' : 'wait';
+          return `<div class="table-row"><div><b style="color:#fff">${english}</b> <span style="color:#9ca3af">— ${ogoni}</span></div><span class="pill ${pillClass}">${state}</span></div>`;
+        }).join('')
+      : '<div class="table-row"><div><b style="color:#fff">No words added yet</b> <span style="color:#9ca3af">— Start contributing</span></div><span class="pill wait">⏳ Waiting</span></div>';
+
+    myContributionList.innerHTML = items;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute - Gbene Ogoni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GBENE OGONI</h1>
+            <p><span id="typing"></span></p>
+        </div>
+        <nav>
+            <a href="index.html">Dictionary</a>
+            <a class="active" href="contribute.html">Contribute</a>
+            <a href="challenge.html">Challenge</a>
+            <a href="Login.html">Sign In</a>
+            <a href="About%20us%202.html">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Contribute to <span>Ogoni</span></h1>
+            <p>Help preserve the language by sharing a word and its meaning.</p>
+        </div>
+        <section class="tab active">
+            <div class="card form-card">
+                <h2>Add a new word</h2>
+                <p class="muted">Help preserve the Ogoni language by sharing a word, its example, category, and voice recordings.</p>
+                <div id="contributeAccessStatus" role="status" aria-live="polite"></div>
+                <label for="englishWord">English</label>
+                <input id="englishWord" placeholder="e.g. Moon" required>
+                <label for="ogoniWord">Ogoni Translation</label>
+                <input id="ogoniWord" placeholder="e.g. Duun" required>
+                <label for="wordCategory">Category</label>
+                <input id="wordCategory" placeholder="e.g. Nature, Food, or Culture" required>
+                <label>Audio for Ogoni Word</label>
+                <button class="btn" id="recordWordAudioBtn" type="button" data-audio-id="wordAudio">Add voice</button>
+                <p id="wordAudioStatus" class="muted" role="status" aria-live="polite">Record a pronunciation using your microphone.</p>
+                <audio id="wordAudioPreview" controls hidden></audio>
+                <label for="exampleText">Example Sentence (English)</label>
+                <textarea id="exampleText" placeholder="The moon is bright" required></textarea>
+                <label for="exampleOgoniText">Example Sentence in Ogoni</label>
+                <textarea id="exampleOgoniText" placeholder="Write the same sentence in Ogoni" required></textarea>
+                <label>Audio for Ogoni Sentence</label>
+                <button class="btn" id="recordSentenceAudioBtn" type="button" data-audio-id="sentenceAudio">Add voice</button>
+                <p id="sentenceAudioStatus" class="muted" role="status" aria-live="polite">Record the sentence using your microphone.</p>
+                <audio id="sentenceAudioPreview" controls hidden></audio>
+                <button class="btn full" id="submitWordBtn" type="button">Submit to Dictionary →</button>
+                <div id="contributeStatus" role="status" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+    <footer>Mue-ue Ogoni na le a pe</footer>
+    <script src="words.js"></script>
+    <script src="API.js"></script>
+</body>
+</html>

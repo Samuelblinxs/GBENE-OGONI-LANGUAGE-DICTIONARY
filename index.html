@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khana - First Ogoni Dictionary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GBENE OGONI</h1>
+            <p><span id="typing"></span></p>
+        </div>
+        <nav>
+            <a class="active" href="index.html">Dictionary</a>
+            <a href="contribute.html">Contribute</a>
+            <a href="challenge.html">Challenge</a>
+            <a href="Login.html">Sign In</a>
+            <a href="About%20us%202.html">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>preserve <span>Ogoni</span> for the next generation</h1>
+            <h2><p>Ogoni digital Language Dictionary were you can search up to 2,000 words and English translation in our native Language</p></h2>
+        </div>
+
+        <section id="dictionary" class="tab active">
+            <div class="search-box dictionary-search">
+                <input id="searchInput" type="search" placeholder="Search English or Khana words..." aria-label="Search dictionary">
+                <button id="searchBtn" type="button">Search</button>
+            </div>
+            <div class="grid" id="wordList"></div>
+            <div class="word-pagination" id="wordPagination" aria-live="polite"></div>
+        </section>
+
+        <section class="feedback-section">
+            <div class="card feedback-card">
+                <span class="tag">Feedback</span>
+                <h2>Help us improve Khana</h2>
+                <p class="muted">Share your thoughts, ideas, and suggestions to help preserve and grow the Ogoni language.</p>
+                <textarea placeholder="Tell us what you think..."></textarea>
+                <button class="btn full" type="button">Send Feedback</button>
+            </div>
+        </section>
+    </main>
+    <footer>Mue-ue Ogoni na le a pe</footer>
+    <script src="words.js"></script>
+    <script src="API.js"></script>
+</body>
+</html>

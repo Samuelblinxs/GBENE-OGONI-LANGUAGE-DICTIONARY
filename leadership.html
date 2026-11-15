@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Leadership Dashboard - Ogoni</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.dash-grid{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.sidebar{background:rgba(255,255,255,0.04);border-right:1px solid rgba(255,255,255,0.08);padding:24px}
+.sidebar h3{margin-bottom:20px}
+.sidebar button{display:block;width:100%;text-align:left;padding:12px 14px;margin-bottom:8px;border-radius:12px;border:1px solid transparent;background:transparent;color:#a1a1aa;cursor:pointer}
+.sidebar button.active{background:#fff;color:#000}
+.main{padding:30px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:25px}
+.stat{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:18px}
+.stat h2{font-size:28px}
+.table{width:100%;border-collapse:collapse;margin-top:15px}
+.table th,.table td{text-align:left;padding:12px;border-bottom:1px solid rgba(255,255,255,0.08);color:#d4d4d8}
+@media(max-width:800px){.dash-grid{grid-template-columns:1fr}.sidebar{display:flex;flex-wrap:wrap;gap:6px;padding:12px}.sidebar h3{width:100%;margin-bottom:8px}.sidebar button{width:auto;flex:1 1 140px;margin:0}.sidebar button[onclick]{margin-top:0!important}.main{padding:18px}}
+.voice-toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:18px 0}
+.voice-toolbar input{margin:0;max-width:460px}
+.voice-entry{margin:14px 0}
+.voice-entry h3{margin-bottom:14px}
+.voice-editors{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.voice-editor{padding:14px;border:1px solid rgba(255,255,255,.1);border-radius:12px}
+.voice-editor p{margin-bottom:10px;color:#a1a1aa}
+.voice-editor button{padding:8px 14px;margin:4px 6px 4px 0}
+.voice-status{min-height:20px;margin-top:8px;color:#a1a1aa;font-size:13px}
+.voice-status.error{color:#ef4444}
+.voice-status.success{color:#22c55e}
+</style>
+</head>
+<body>
+
+<div class="dash-grid">
+<div class="sidebar">
+<h3>Ogoni Admin</h3>
+<button class="active" data-view="overview">📊 Overview</button>
+<button data-view="words">📝 Pending Words</button>
+<button data-view="voices">🎙️ Dictionary Voices</button>
+<button data-view="users">👥 Contributors</button>
+<button data-view="leaderboard">🏆 Leaderboard</button>
+<button onclick="logout()" style="margin-top:30px;color:#ef4444">Logout</button>
+</div>
+
+<div class="main">
+<div id="overview" class="dash-view">
+<h1>Welcome, <span id="adminName">Leader</span></h1>
+<div class="stats">
+<div class="stat"><p class="muted">Total Words</p><h2 id="totalWords">3</h2></div>
+<div class="stat"><p class="muted">Pending Approval</p><h2 id="pendingWords">2</h2></div>
+<div class="stat"><p class="muted">Contributors</p><h2 id="totalUsers">12</h2></div>
+<div class="stat"><p class="muted">Voice Clips</p><h2>8</h2></div>
+</div>
+<h3>Recent Activity</h3>
+<div class="card" style="margin-top:12px">Barile added "Moon = Duun" - 2 mins ago <button class="btn" style="float:right;padding:6px 12px">Approve</button></div>
+</div>
+
+<div id="words" class="dash-view" style="display:none">
+<h1>Pending Words</h1>
+<table class="table">
+<tr><th>English</th><th>Ogoni</th><th>By</th><th>Action</th></tr>
+<tr><td>Rain</td><td>Doo</td><td>Barile - Bori</td><td><button class="btn" style="padding:6px 12px">Approve</button> <button style="background:transparent;color:#ef4444;border:1px solid rgba(255,255,255,0.1);padding:6px 12px;border-radius:20px;cursor:pointer">Reject</button></td></tr>
+<tr><td>Stars</td><td>Tam</td><td>Ledum - Kaani</td><td><button class="btn" style="padding:6px 12px">Approve</button> <button style="background:transparent;color:#ef4444;border:1px solid rgba(255,255,255,0.1);padding:6px 12px;border-radius:20px;cursor:pointer">Reject</button></td></tr>
+</table>
+</div>
+
+<div id="voices" class="dash-view" style="display:none">
+<h1>Dictionary Voices</h1>
+<p class="muted">Record and save a pronunciation or example voice for a built-in dictionary entry.</p>
+<div class="voice-toolbar">
+<input id="voiceSearch" type="search" placeholder="Search English or Ogoni words" aria-label="Search dictionary words">
+<span id="voiceWordCount" class="muted"></span>
+</div>
+<p id="voiceEditorStatus" class="voice-status" role="status" aria-live="polite"></p>
+<div id="dictionaryVoiceList"></div>
+</div>
+
+<div id="users" class="dash-view" style="display:none">
+<h1>Contributors</h1>
+<table class="table">
+<thead><tr><th>Name</th><th>Email</th><th>Location</th><th>Words Added</th><th>Role</th></tr></thead>
+<tbody id="adminUsers"><tr><td colspan="5">Loading accounts...</td></tr></tbody>
+</table>
+</div>
+
+<div id="leaderboard" class="dash-view" style="display:none">
+<h1>Leaderboard</h1>
+<div class="card">🥇 Kaesor - 120 pts - 45 words</div>
+<div class="card" style="margin-top:10px">🥈 Barile - 85 pts - 12 words</div>
+</div>
+</div>
+</div>
+
+<script src="words.js"></script>
+<script src="leadership.js"></script>
+<script>
+// Simple tab switch for dashboard
+document.querySelectorAll('.sidebar button[data-view]').forEach(b=>{
+ b.addEventListener('click',()=>{
+   document.querySelectorAll('.sidebar button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+   document.querySelectorAll('.dash-view').forEach(v=>v.style.display='none');
+   document.getElementById(b.dataset.view).style.display='block';
+ });
+});
+fetch('/api/admin/session', { credentials: 'same-origin' })
+ .then(response => {
+     if (!response.ok) throw new Error('Admin session required');
+     return response.json();
+ })
+ .then(async admin => {
+     document.getElementById('adminName').textContent = admin.name;
+     const response = await fetch('/api/admin/users', { credentials: 'same-origin' });
+     if (!response.ok) throw new Error('Could not load accounts');
+     const users = await response.json();
+     const tableBody = document.getElementById('adminUsers');
+     tableBody.replaceChildren();
+     document.getElementById('totalUsers').textContent = users.length;
+     if (!users.length) {
+         const row = tableBody.insertRow();
+         const cell = row.insertCell();
+         cell.colSpan = 5;
+         cell.textContent = 'No accounts found.';
+         return;
+     }
+     users.forEach(user => {
+         const row = tableBody.insertRow();
+         [user.name, user.email, user.location, user.wordsAdded, user.role].forEach(value => {
+             row.insertCell().textContent = value;
+         });
+     });
+ })
+ .catch(() => { location.href = '/Login.html'; });
+function logout(){localStorage.clear();location.href='/logout'}
+</script>
+</body>
+</html>

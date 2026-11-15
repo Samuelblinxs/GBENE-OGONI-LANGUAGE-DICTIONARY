@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Gbene Ogoni</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
+  body { background:#0a0f0d; color:#e5e7eb; min-height:100vh; }
+  a { text-decoration:none; color:inherit; }
+
+  /* HEADER - Same as About / Home */
+  header { display:flex; justify-content:space-between; align-items:center; padding:18px 5%; background:#0a0f0d; }
+  .logo { line-height:1; }
+  .logo h1 { font-size:28px; font-weight:900; letter-spacing:-1px; background:linear-gradient(90deg,#a3e635,#22c55e); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .logo span { font-size:13px; color:#a3e635; font-weight:700; letter-spacing:2px; }
+  nav { display:flex; gap:10px; flex-wrap:wrap; }
+  nav a { padding:8px 16px; border-radius:999px; font-size:14px; font-weight:600; color:#d1d5db; }
+  nav a:hover { background:#e5e7eb; color:#111; }
+
+  /* LOGIN CARD - Matches your signup screenshot */
+  .wrap { max-width:480px; margin:30px auto; padding:0 5% 60px; text-align:center; }
+  .top-tag { color:#22c55e; font-weight:900; letter-spacing:1px; font-size:16px; text-transform:uppercase; }
+  .wrap h2 { font-size:38px; font-weight:900; color:#fff; margin:8px 0 8px; line-height:1.1; }
+  .wrap .sub { color:#9ca3af; font-size:15px; margin-bottom:28px; }
+  .wrap .sub b { color:#fff; }
+
+  .card { background:#141b18; border:1px solid #222f29; border-radius:18px; padding:28px; text-align:left; }
+  label { display:block; font-size:14px; font-weight:700; color:#fff; margin:16px 0 8px; }
+  label:first-child { margin-top:0; }
+  input { width:100%; padding:14px 16px; background:#2a332e; border:1px solid #374151; border-radius:12px; color:#fff; font-size:15px; outline:none; }
+  input::placeholder { color:#6b7280; }
+  input:focus { border-color:#a3e635; background:#232d28; }
+
+  .pass-wrap { position:relative; }
+  .pass-wrap button { position:absolute; right:12px; top:50%; transform:translateY(-50%); background:#e5e7eb; color:#111; border:none; padding:6px 12px; border-radius:999px; font-size:12px; font-weight:700; cursor:pointer; }
+
+  .row { display:flex; justify-content:space-between; align-items:center; margin:16px 0 20px; font-size:13.5px; }
+  .row label { display:flex; align-items:center; gap:8px; margin:0; font-weight:500; color:#cbd5e1; }
+  .row input { width:auto; accent-color:#a3e635; }
+  .row a { color:#a3e635; font-weight:700; }
+
+  .btn { width:100%; padding:15px; background:linear-gradient(90deg,#4ade80,#a3e635); color:#000; border:none; border-radius:999px; font-weight:900; font-size:16px; cursor:pointer; }
+  .btn:hover { opacity:0.9; }
+  .status { min-height:18px; margin-top:12px; font-size:13px; font-weight:600; }
+  .status.error { color:#fca5a5; }
+  .status.success { color:#86efac; }
+
+  .divider { text-align:center; color:#6b7280; font-size:13px; margin:20px 0; position:relative; }
+  .divider::before, .divider::after { content:""; position:absolute; top:50%; width:40%; height:1px; background:#2a332e; }
+  .divider::before { left:0; } .divider::after { right:0; }
+
+  .guest { width:100%; padding:13px; background:transparent; border:1px solid #374151; color:#fff; border-radius:999px; font-weight:700; font-size:14px; cursor:pointer; }
+  .bottom { margin-top:20px; font-size:14px; color:#9ca3af; text-align:center; }
+  .bottom a { color:#a3e635; font-weight:800; }
+
+  @media(max-width:650px){ header{flex-direction:column; gap:12px} .wrap h2{font-size:30px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h1>GBENE OGONI</h1>
+    <span>GBENE OGONI</span>
+  </div>
+  <nav>
+    <a href="index.html">Dictionary</a>
+    <a href="contribute.html">Contribute</a>
+    <a href="challenge.html">Challenge</a>
+    <a href="/About%20us%202.html">About Us</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="top-tag">KHANA • BARISIRAME</div>
+  <h2>Welcome back</h2>
+  <p class="sub">Login to continue preserving Ogoni language with <b>12+ contributors</b></p>
+
+  <div class="card">
+    <form id="loginForm" method="POST" action="/api/login">
+
+      <label>Email or Phone *</label>
+      <input id="loginEmail" name="email" type="text" placeholder="kaane@gmail.com or 080..." required>
+
+      <label>Password *</label>
+      <div class="pass-wrap">
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <button type="button" onclick="let p=document.getElementById('password'); p.type = p.type==='password' ? 'text' : 'password'; this.textContent = p.type==='password' ? 'Show' : 'Hide';">Show</button>
+      </div>
+
+      <div class="row">
+        <label><input type="checkbox" checked> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button class="btn" type="submit">Login →</button>
+      <div id="loginStatus" class="status" aria-live="polite"></div>
+      <div class="divider">or</div>
+      <button class="guest" type="button" onclick="window.location.href='index.html'">Continue as guest</button>
+
+    </form>
+  </div>
+
+  <p class="bottom">No account yet? <a href="/authentication.html">Create account</a> • <a href="/index.html">Back to Dictionary</a></p>
+</div>
+
+<script>
+  const loginForm = document.getElementById('loginForm');
+  const loginStatus = document.getElementById('loginStatus');
+
+  function saveLocalLogin(email, name, location = 'Bori, Khana', role = 'Contributor') {
+    const cleanedName = (name || 'User').trim();
+    localStorage.setItem('khana_logged', 'true');
+    localStorage.setItem('khana_name', cleanedName);
+    localStorage.setItem('khana_email', email);
+    localStorage.setItem('khana_role', role);
+    localStorage.setItem('gbene_logged_in', 'true');
+    localStorage.setItem('gbene_user_name', cleanedName);
+    localStorage.setItem('gbene_user_email', email);
+    localStorage.setItem('gbene_user_location', location);
+    localStorage.setItem('gbene_created_at', localStorage.getItem('gbene_created_at') || new Date().toISOString());
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(loginForm);
+      const submitButton = loginForm.querySelector('button[type="submit"]');
+      const email = (formData.get('email') || '').toString().trim();
+      const password = (formData.get('password') || '').toString();
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Logging in...';
+      }
+
+      if (loginStatus) {
+        loginStatus.className = 'status';
+        loginStatus.textContent = '';
+      }
+
+      try {
+        const loginUrl = new URL('/api/login', window.location.origin);
+        const nextUrl = new URLSearchParams(window.location.search).get('next');
+        if (nextUrl) loginUrl.searchParams.set('next', nextUrl);
+
+        const response = await fetch(loginUrl, {
+          method: 'POST',
+          body: formData,
+          credentials: 'same-origin'
+        });
+
+        const text = await response.text();
+
+        if (response.redirected || response.ok) {
+          const targetUrl = response.url || '/userdashboard%201.html';
+          const storedName = localStorage.getItem('khana_name') || email.split('@')[0];
+          const storedLocation = localStorage.getItem('gbene_user_location') || 'Bori, Khana';
+          const storedRole = localStorage.getItem('khana_role') || 'Contributor';
+          saveLocalLogin(email, storedName, storedLocation, storedRole);
+          window.location.href = targetUrl;
+          return;
+        }
+
+        const localAccounts = JSON.parse(localStorage.getItem('gbene_accounts') || '[]');
+        const match = localAccounts.find(account =>
+          account.email.toLowerCase() === email.toLowerCase() &&
+          account.password === password
+        );
+
+        if (match) {
+          saveLocalLogin(match.email, `${match.firstName} ${match.lastName}`.trim(), match.location || 'Bori, Khana', match.role || 'Contributor');
+          window.location.href = 'userdashboard 1.html';
+          return;
+        }
+
+        if (loginStatus) {
+          loginStatus.className = 'status error';
+          loginStatus.textContent = text || 'Login failed. Please try again.';
+        }
+      } catch (error) {
+        const localAccounts = JSON.parse(localStorage.getItem('gbene_accounts') || '[]');
+        const emailValue = (document.getElementById('loginEmail')?.value || '').trim();
+        const passwordValue = (document.getElementById('password')?.value || '');
+        const match = localAccounts.find(account =>
+          account.email.toLowerCase() === emailValue.toLowerCase() &&
+          account.password === passwordValue
+        );
+
+        if (match) {
+          saveLocalLogin(match.email, `${match.firstName} ${match.lastName}`.trim(), match.location || 'Bori, Khana', match.role || 'Contributor');
+          window.location.href = 'userdashboard 1.html';
+          return;
+        }
+
+        if (loginStatus) {
+          loginStatus.className = 'status error';
+          loginStatus.textContent = 'Something went wrong. Please try again.';
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Login →';
+        }
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

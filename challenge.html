@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge - Gbene Ogoni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GBENE OGONI</h1>
+            <p><span id="typing"></span></p>
+        </div>
+        <nav>
+            <a href="index.html">Dictionary</a>
+            <a href="contribute.html">Contribute</a>
+            <a class="active" href="challenge.html">Challenge</a>
+            <a href="Login.html">Sign In</a>
+            <a href="About%20us%202.html">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Take the <span>Ogoni</span> challenge</h1>
+            <p>Practice your Khana vocabulary with a daily quiz.</p>
+        </div>
+        <section class="tab active">
+            <div class="card challenge-card">
+                <span class="tag">Daily Quiz</span>
+                <h2 id="questionText">Loading...</h2>
+                <input id="answerInput" placeholder="Type your answer..." aria-label="Your Khana translation">
+                <button class="btn full" id="submitAnswerBtn" type="button">Submit Answer</button>
+                <button class="link-btn" id="nextQuestionBtn" type="button">Skip → Next</button>
+                <div id="answerStatus" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+    <footer>Mue-ue Ogoni na le a pe</footer>
+    <script src="words.js"></script>
+    <script src="API.js"></script>
+</body>
+</html>

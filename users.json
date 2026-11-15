@@ -1,0 +1,15 @@
+{
+  "patience.session@example.com": {
+    "firstName": "Patience",
+    "lastName": "Koro",
+    "email": "patience.session@example.com",
+    "password": "Password123"
+  },
+  "samueltamka19@gmail.com": {
+    "firstName": "Barisirame Samuel",
+    "lastName": "Kaesor",
+    "email": "samueltamka19@gmail.com",
+    "password": "555999-SAM",
+    "role": "admin"
+  }
+}

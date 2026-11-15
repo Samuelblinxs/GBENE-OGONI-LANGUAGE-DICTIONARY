@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Dashboard - Khana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .choice-page{min-height:100vh;display:grid;place-items:center;padding:24px}
+    .choice-content{width:min(760px,100%);text-align:center}
+    .choice-content h1{font-size:clamp(30px,5vw,44px);margin-bottom:10px}
+    .choice-content>p{color:#a1a1aa;margin-bottom:28px}
+    .choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;text-align:left}
+    .choice-card{display:flex;flex-direction:column;gap:12px;color:#fff;text-decoration:none}
+    .choice-card h2{font-size:22px}
+    .choice-card p{color:#a1a1aa;flex:1}
+    .choice-action{display:inline-block;margin-top:8px;color:#a3e635;font-weight:700}
+    .logout{display:inline-block;margin-top:24px;color:#a1a1aa}
+  </style>
+</head>
+<body>
+  <main class="choice-page">
+    <section class="choice-content" aria-labelledby="page-title">
+      <h1 id="page-title">Choose a dashboard</h1>
+      <p>You are signed in as an admin. Where would you like to go?</p>
+      <div class="choice-grid">
+        <a class="card choice-card" href="/userdashboard.html">
+          <h2>User dashboard</h2>
+          <p>Continue to your personal learning and contribution dashboard.</p>
+          <span class="choice-action">Open user dashboard &rarr;</span>
+        </a>
+        <a class="card choice-card" href="/leadership.html">
+          <h2>Admin dashboard</h2>
+          <p>Manage contributions and view community accounts.</p>
+          <span class="choice-action">Open admin dashboard &rarr;</span>
+        </a>
+      </div>
+      <a class="logout" href="/logout">Log out</a>
+    </section>
+  </main>
+</body>
+</html>

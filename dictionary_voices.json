@@ -1,0 +1,556 @@
+[
+  {
+    "english": "Water",
+    "ogoni": "Maa",
+    "wordAudio": "/uploads/a2c3352b8e91474d8d06ba9496e4a3ff.webm",
+    "sentenceAudio": "/uploads/d988f6132b2c42a99c972df61aa3c528.webm"
+  },
+  {
+    "english": "Language",
+    "ogoni": "Mue-ue",
+    "wordAudio": "/uploads/6cefcdb59c884256be2f915d665c9522.webm",
+    "sentenceAudio": "/uploads/dd35c5b4c7464cf2bbdfb1c64f73d8f8.webm"
+  },
+  {
+    "english": "Thank you",
+    "ogoni": "Oyage",
+    "wordAudio": "/uploads/629f906dd5744d4981409073e3d822de.webm",
+    "sentenceAudio": "/uploads/2169308291a540bd9613c8bf0e2a5fec.webm"
+  },
+  {
+    "english": "Good morning",
+    "ogoni": "Dee-ayira",
+    "wordAudio": "/uploads/cfe3601844d64a119c5778ebf603e332.webm"
+  },
+  {
+    "english": "Come",
+    "ogoni": "Lu",
+    "wordAudio": "/uploads/230e747d295a4138bd6652d5a9d7ad16.webm",
+    "sentenceAudio": "/uploads/6de0edeaa9b845bcaee735988c559b33.webm"
+  },
+  {
+    "english": "Go",
+    "ogoni": "Kii",
+    "wordAudio": "/uploads/3063ea1b485a44729fdb94e0b09776b1.webm",
+    "sentenceAudio": "/uploads/e60f9afc10504905aa3e1cf7dccfb520.webm"
+  },
+  {
+    "english": "One",
+    "ogoni": "Zi",
+    "wordAudio": "/uploads/17e1a884e8094805b22586bcc35556fe.webm",
+    "sentenceAudio": "/uploads/18fbc1638fb74659afeb81d17f49d518.webm"
+  },
+  {
+    "english": "Two",
+    "ogoni": "Baa",
+    "wordAudio": "/uploads/4e5cc64da7e9453aacc021cc1436e579.webm",
+    "sentenceAudio": "/uploads/17b9125cf1e5433999578da35e39fa48.webm"
+  },
+  {
+    "english": "Three",
+    "ogoni": "Taa",
+    "sentenceAudio": "/uploads/e6b76a8aabbd4e5da267c32f70073cb6.webm",
+    "wordAudio": "/uploads/981845ec794e4a41841371ce9b4c3160.webm"
+  },
+  {
+    "english": "Four",
+    "ogoni": "Nia",
+    "wordAudio": "/uploads/282d16897fbf4fa3b8145dec84ffa5dc.webm",
+    "sentenceAudio": "/uploads/2247a5a9e962435cba138109ec78a2ca.webm"
+  },
+  {
+    "english": "Five",
+    "ogoni": "oo-oo",
+    "wordAudio": "/uploads/39924996762e462c923a18ee44610289.webm",
+    "sentenceAudio": "/uploads/951998c075764ff5adede793c1fbf395.webm"
+  },
+  {
+    "english": "Six",
+    "ogoni": "Ini-i",
+    "sentenceAudio": "/uploads/51abc70eaa414ef9893f5e3f541b59ca.webm",
+    "wordAudio": "/uploads/969421c00f064c0fa8287ca1c3efcfda.webm"
+  },
+  {
+    "english": "Seven",
+    "ogoni": "ere-Ba",
+    "wordAudio": "/uploads/9c28a04dfef346bf9643b3e089f06c41.webm",
+    "sentenceAudio": "/uploads/80512a18528743eb92bd9bbd5c39ba29.webm"
+  },
+  {
+    "english": "Eight",
+    "ogoni": "ere-Taa",
+    "wordAudio": "/uploads/ec30ee845ad74bd5ad4ee695d17192c3.webm",
+    "sentenceAudio": "/uploads/bf4237af32044104bf0ea9d3d8b18d56.webm"
+  },
+  {
+    "english": "Nine",
+    "ogoni": "ere-nia",
+    "wordAudio": "/uploads/be8084a89a0c4ff38bb348d6e7e1cae2.webm",
+    "sentenceAudio": "/uploads/a5a5da9c004c402795f3497aec76cc0f.webm"
+  },
+  {
+    "english": "Mother",
+    "ogoni": "Kà",
+    "wordAudio": "/uploads/99267b6b86c240a0a6de1af0be837150.webm",
+    "sentenceAudio": "/uploads/6ed3d017886d44d2a722ae788919b150.webm"
+  },
+  {
+    "english": "Ten",
+    "ogoni": "Loob",
+    "wordAudio": "/uploads/dfb3b815396b453f97f3e72e28567bc3.webm",
+    "sentenceAudio": "/uploads/54c4178818714b098216a647c495a94b.webm"
+  },
+  {
+    "english": "Father",
+    "ogoni": "Te",
+    "wordAudio": "/uploads/4938beea31d24d97ad80ab101d034f20.webm",
+    "sentenceAudio": "/uploads/b94fac67e41c4e2ca1dddbd6739b0474.webm"
+  },
+  {
+    "english": "Child",
+    "ogoni": "Nwi",
+    "wordAudio": "/uploads/489b5d37174b4ab083ee3fa84ba11a94.webm",
+    "sentenceAudio": "/uploads/e288be94adea405b959ef3b22adeb317.webm"
+  },
+  {
+    "english": "Children",
+    "ogoni": "Gbo-nyorgor",
+    "wordAudio": "/uploads/cd52376aedbc4135aa00c5049639ea83.webm"
+  },
+  {
+    "english": "Brother",
+    "ogoni": "Wuga-NeeDam",
+    "wordAudio": "/uploads/d641f9e048b54f54a1c6e339263961e0.webm",
+    "sentenceAudio": "/uploads/e2f7b95a8c0c410ebabcc7ea7c5ef8e2.webm"
+  },
+  {
+    "english": "Slit-gong",
+    "ogoni": "Kóo",
+    "wordAudio": "/uploads/b15382a2b90a4918bbfde549ca87c5c0.webm"
+  },
+  {
+    "english": "Sister",
+    "ogoni": "Wuga-gbobia",
+    "wordAudio": "/uploads/4a879b655a52437799116ef4101938c7.webm",
+    "sentenceAudio": "/uploads/653e13e978774f02a5b27e7222bf874c.webm"
+  },
+  {
+    "english": "Friend",
+    "ogoni": "Gbo",
+    "wordAudio": "/uploads/4b421ac0a505472284542c09a1bf2967.webm"
+  },
+  {
+    "english": "Man",
+    "ogoni": "Needam",
+    "wordAudio": "/uploads/189ccbc6d21d44c087d4b15239815f3e.webm"
+  },
+  {
+    "english": "People",
+    "ogoni": "Pia-Nee",
+    "sentenceAudio": "/uploads/7717ebdab8c3460c91763e9f7308005d.webm",
+    "wordAudio": "/uploads/e3e87fc5e7a5478292e1ddf923a900a0.webm"
+  },
+  {
+    "english": "House",
+    "ogoni": "Tor",
+    "wordAudio": "/uploads/5fe7f1e62b4a4d949a9779edba34ca94.webm",
+    "sentenceAudio": "/uploads/79c57fb9555847d398a192038423f218.webm"
+  },
+  {
+    "english": "Town",
+    "ogoni": "Ke-Bue",
+    "wordAudio": "/uploads/6f278405824f4a6d976e84cd4b3aea01.webm"
+  },
+  {
+    "english": "Market",
+    "ogoni": "Du",
+    "wordAudio": "/uploads/19568407c56741008452b700306edb0a.webm",
+    "sentenceAudio": "/uploads/c7b45cfbe080447ab988e66e4204b4c5.webm"
+  },
+  {
+    "english": "Road",
+    "ogoni": "Dee",
+    "wordAudio": "/uploads/0847bffebf7b4a6c8b9930a1470ac87b.webm",
+    "sentenceAudio": "/uploads/e9463b79361b4374bd7e1dcdae9d5d11.webm"
+  },
+  {
+    "english": "Farm",
+    "ogoni": "Wii",
+    "wordAudio": "/uploads/be8dfba528484cc2800f1b31f9974c30.webm",
+    "sentenceAudio": "/uploads/db9f3a1e673e438f91f21ef92a846c68.webm"
+  },
+  {
+    "english": "Yam",
+    "ogoni": "Zia",
+    "wordAudio": "/uploads/954bd45f27e14cc398ff7792f5cbe334.webm",
+    "sentenceAudio": "/uploads/e202df265e4544e2b4c425d2b0267a87.webm"
+  },
+  {
+    "english": "Cassava",
+    "ogoni": "Ikpakporo",
+    "wordAudio": "/uploads/98aa3da00cc14f2c9721285590d38621.webm",
+    "sentenceAudio": "/uploads/1f904a49851d484d9300caf5af6bfdee.webm"
+  },
+  {
+    "english": "Maize / Corn",
+    "ogoni": "Kpààkpàà",
+    "wordAudio": "/uploads/007b32dd007349228851d7da49fd0ba2.webm",
+    "sentenceAudio": "/uploads/96027a0e6ddc4cb888d3e19612321eff.webm"
+  },
+  {
+    "english": "Rice",
+    "ogoni": "Zia-koor",
+    "wordAudio": "/uploads/c444ab45e74b4dcda9d5faece2b4950e.webm",
+    "sentenceAudio": "/uploads/6505f93465974c3d82950691bfda72da.webm"
+  },
+  {
+    "english": "Fish",
+    "ogoni": "bari",
+    "wordAudio": "/uploads/150bd64514fb4de6a5aa9e1af9334e48.webm",
+    "sentenceAudio": "/uploads/a0ed01454e2f44c1bbabcdead1e16542.webm"
+  },
+  {
+    "english": "Meat",
+    "ogoni": "Nam",
+    "wordAudio": "/uploads/db6b58aa00b94f08933e41e497472959.webm",
+    "sentenceAudio": "/uploads/c476fe5a1c9f4709ba13434b35425475.webm"
+  },
+  {
+    "english": "Goat",
+    "ogoni": "Pee",
+    "wordAudio": "/uploads/e5e6eeeda3f745959c59b7221b59ba6f.webm",
+    "sentenceAudio": "/uploads/12c3ce39ecde49a0b7717b1cddfb4f4c.webm"
+  },
+  {
+    "english": "Dog",
+    "ogoni": "Gboo",
+    "wordAudio": "/uploads/0f51c70c9305449ab579b7afecfcedda.webm",
+    "sentenceAudio": "/uploads/33b1f72987264fbb8b65e1682f3fa411.webm"
+  },
+  {
+    "english": "Cat",
+    "ogoni": "Pusi",
+    "wordAudio": "/uploads/1ecee3ec31f14a7db6c3ee8919311cf8.webm",
+    "sentenceAudio": "/uploads/c3b073601d4f4c6c930e93544a9369a2.webm"
+  },
+  {
+    "english": "Frog",
+    "ogoni": "Kárá",
+    "wordAudio": "/uploads/f5de28bd54194db59455b86617788893.webm",
+    "sentenceAudio": "/uploads/fb464c575df64680a6811db70fd52ee0.webm"
+  },
+  {
+    "english": "Drum",
+    "ogoni": "Kɛ̀rɛ̀",
+    "wordAudio": "/uploads/699f1dba6caa4795a9adc814500cad01.webm",
+    "sentenceAudio": "/uploads/2c576d5335fe4afb99b9130714bc52f8.webm"
+  },
+  {
+    "english": "Chair",
+    "ogoni": "Kàsì",
+    "wordAudio": "/uploads/384c4e89452a4dd28205999354ae26c3.webm",
+    "sentenceAudio": "/uploads/e3f7f93ff06c4b9fba72368bd63ddc10.webm"
+  },
+  {
+    "english": "Table",
+    "ogoni": "Kàsì",
+    "wordAudio": "/uploads/5e92d8317d6c4801b03bf6419d9650fb.webm",
+    "sentenceAudio": "/uploads/63d85d202242495eadecf73f826ebb30.webm"
+  },
+  {
+    "english": "Book",
+    "ogoni": "Kpa",
+    "wordAudio": "/uploads/e61260ba5c3a47f7a5c10ef7ed245801.webm",
+    "sentenceAudio": "/uploads/6b7356f90e354492be3099a292c8e4b1.webm"
+  },
+  {
+    "english": "Different",
+    "ogoni": "Kee",
+    "wordAudio": "/uploads/4917ebd97aae4d2fa0cbd871b9009480.webm",
+    "sentenceAudio": "/uploads/8989f963f24d446cbca84bcc11851f25.webm"
+  },
+  {
+    "english": "Craft",
+    "ogoni": "Batam",
+    "wordAudio": "/uploads/a66590603798435985ba0ebbae9ef9cf.webm",
+    "sentenceAudio": "/uploads/0446e9a18d7c41868631b73a45ff0808.webm"
+  },
+  {
+    "english": "Slaughter",
+    "ogoni": "Kɛ̀ɛ",
+    "wordAudio": "/uploads/f4b22f445d564beab0219da71c62e639.webm",
+    "sentenceAudio": "/uploads/f893025c4c594707ba4ad2ea4020a996.webm"
+  },
+  {
+    "english": "Ferns",
+    "ogoni": "Kébé",
+    "wordAudio": "/uploads/1e5a278da6e346cd85c466ed25b361b8.webm",
+    "sentenceAudio": "/uploads/b0d1d88685844289bcad5e1793a1175d.webm"
+  },
+  {
+    "english": "Egg",
+    "ogoni": "Kékɔ̃ɔ̃",
+    "wordAudio": "/uploads/740a150f25024700978624176704b5c0.webm",
+    "sentenceAudio": "/uploads/da4d4295269e4b4b8241c16689cd73eb.webm"
+  },
+  {
+    "english": "Wing",
+    "ogoni": "IPaã",
+    "sentenceAudio": "/uploads/569da8a62e1f4342a9948f9ef6259ee6.webm",
+    "wordAudio": "/uploads/646f3e1860c34470b509a00a00e89db1.webm"
+  },
+  {
+    "english": "Bird",
+    "ogoni": "Ipiori",
+    "wordAudio": "/uploads/79b49b3ac1544611bf5bc03226620f4e.webm",
+    "sentenceAudio": "/uploads/d9840c1d5e064cb3b363719b4090cf11.webm"
+  },
+  {
+    "english": "Tree",
+    "ogoni": "Tè",
+    "wordAudio": "/uploads/3471bfa276d042658a7e9fca38fb81e0.webm",
+    "sentenceAudio": "/uploads/44a04a4df46c4fd4bccaad44199355b0.webm"
+  },
+  {
+    "english": "Flower",
+    "ogoni": "Ikpedee-Ipania",
+    "wordAudio": "/uploads/f7008fae43a34098af9b1d89df764436.webm",
+    "sentenceAudio": "/uploads/870ea7a94e0d41e6b6f2f70f1e276554.webm"
+  },
+  {
+    "english": "Fruit",
+    "ogoni": "Nwi-beete",
+    "wordAudio": "/uploads/2ddaffc5dd0d49ff93102f83a96796ba.webm",
+    "sentenceAudio": "/uploads/67db1503589d40a6b743161a061c0a49.webm"
+  },
+  {
+    "english": "Thorn",
+    "ogoni": "suu",
+    "wordAudio": "/uploads/7cd4ddef3f024fe589b9d254919a2928.webm",
+    "sentenceAudio": "/uploads/0fe7bce5547e4707bd99d4e1cec07860.webm"
+  },
+  {
+    "english": "Rope",
+    "ogoni": "Izii",
+    "wordAudio": "/uploads/470e67044b7c488a9b1cd60541063dee.webm",
+    "sentenceAudio": "/uploads/9e8b255690b34d769614eaacac10532a.webm"
+  },
+  {
+    "english": "Salt",
+    "ogoni": "Lò",
+    "wordAudio": "/uploads/a9ddd6ddc05e4792a671fc555306716e.webm",
+    "sentenceAudio": "/uploads/9aa7c58dee974fecaa7c28401bcdc94b.webm"
+  },
+  {
+    "english": "Cooking Pot",
+    "ogoni": "Bãã",
+    "wordAudio": "/uploads/7c045424dccc41b28104cc2646808a70.webm",
+    "sentenceAudio": "/uploads/9970d5a70ca245ceb7e353873e5ada46.webm"
+  },
+  {
+    "english": "Fire",
+    "ogoni": "mia",
+    "wordAudio": "/uploads/2af9564f19a04741a844e475f44de938.webm",
+    "sentenceAudio": "/uploads/bdfaf719b4144e11ae003ba4b33d58cc.webm"
+  },
+  {
+    "english": "Sun",
+    "ogoni": "Du -ee",
+    "wordAudio": "/uploads/a7f9f74732e34c9bb08b6bcf4ccab008.webm",
+    "sentenceAudio": "/uploads/aca5e4a4d9b442a1a0d72ca50315b153.webm"
+  },
+  {
+    "english": "Moon",
+    "ogoni": "Inor",
+    "wordAudio": "/uploads/1d16ecc3f37241c09f465b507fb44b95.webm",
+    "sentenceAudio": "/uploads/1411d054a46240e487dea661d9de0f01.webm"
+  },
+  {
+    "english": "Rain",
+    "ogoni": "boo",
+    "wordAudio": "/uploads/9503e7c089d14fcf8f29a98b96a51a01.webm",
+    "sentenceAudio": "/uploads/d99cdde87f8445f9b77b612d9eacd48d.webm"
+  },
+  {
+    "english": "Day",
+    "ogoni": "dee",
+    "wordAudio": "/uploads/3c386e0271014f03a0871f3ef3284a23.webm",
+    "sentenceAudio": "/uploads/64e5057651af4a21a3888526db2e150e.webm"
+  },
+  {
+    "english": "Night",
+    "ogoni": "Mmm-ne",
+    "wordAudio": "/uploads/be18eabeb67c47efb62ddd3e1b28d292.webm",
+    "sentenceAudio": "/uploads/0db38821c54046318b75acf60575bfa0.webm"
+  },
+  {
+    "english": "Morning",
+    "ogoni": "lo-oore",
+    "sentenceAudio": "/uploads/777bd55b410840ba8572b771562f6546.webm",
+    "wordAudio": "/uploads/d45666bf58d24d9c9a95ee628cd3b5ae.webm"
+  },
+  {
+    "english": "Evening",
+    "ogoni": "loo-mmene",
+    "wordAudio": "/uploads/461ba8d7ebfb436e8ce2f8c5205a760a.webm",
+    "sentenceAudio": "/uploads/c051b46127244f1f8fb9bfd325ab37c3.webm"
+  },
+  {
+    "english": "Head",
+    "ogoni": "Ikobee",
+    "wordAudio": "/uploads/fc0193bbbec443f69a15e90874dcfed1.webm",
+    "sentenceAudio": "/uploads/e4262867b1874088aa3422821a4f5b1d.webm"
+  },
+  {
+    "english": "Eye",
+    "ogoni": "de-ee",
+    "wordAudio": "/uploads/1f730c3fce284dc3a16afaefd02cba74.webm"
+  },
+  {
+    "english": "Ear",
+    "ogoni": "Toor",
+    "wordAudio": "/uploads/9e1f902eba1c4b54b2c5cf1733e2815c.webm",
+    "sentenceAudio": "/uploads/49d89b7a2e2045c481c86d17958124a1.webm"
+  },
+  {
+    "english": "Mouth",
+    "ogoni": "Iga",
+    "wordAudio": "/uploads/ccf04185d2d44fff9add48c3af1af10f.webm",
+    "sentenceAudio": "/uploads/e16eddb994f342c4a2f5bb2aa43b1932.webm"
+  },
+  {
+    "english": "Raffia Palm",
+    "ogoni": "Kɔ̀ɔ̀go",
+    "wordAudio": "/uploads/4fc0ddcce9ef494d8f304570904a68fd.webm",
+    "sentenceAudio": "/uploads/d03ba9c69a344eac85f036f72c20089e.webm"
+  },
+  {
+    "english": "Masquerade",
+    "ogoni": "Ilu",
+    "wordAudio": "/uploads/e411753b61994a94905714f6bac4eb40.webm",
+    "sentenceAudio": "/uploads/e75139f435b74339bf82ac79a8a84ced.webm"
+  },
+  {
+    "english": "Drum Beat",
+    "ogoni": "Mue-kere",
+    "wordAudio": "/uploads/6c21ef39bf42458db672b16cc79f0bb0.webm"
+  },
+  {
+    "english": "Song",
+    "ogoni": "yoor",
+    "wordAudio": "/uploads/44b2c28e91b44a219c42fd34ed05a112.webm",
+    "sentenceAudio": "/uploads/4614eb699bd1499fada0a64932dd3067.webm"
+  },
+  {
+    "english": "Sing",
+    "ogoni": "Ue-we",
+    "wordAudio": "/uploads/d4b5208bdd8a4447a47531feace455df.webm",
+    "sentenceAudio": "/uploads/c572182ca3b74eb1a395a9b3c353b489.webm"
+  },
+  {
+    "english": "Play",
+    "ogoni": "Bi",
+    "wordAudio": "/uploads/d7f135edd95d400fbf3ab7c1682d9807.webm",
+    "sentenceAudio": "/uploads/82d61302fdd04d89bea33dcfb4cee5e1.webm"
+  },
+  {
+    "english": "Work",
+    "ogoni": "Tam",
+    "wordAudio": "/uploads/66e8696055dc4f6db6c2172f2ca61660.webm"
+  },
+  {
+    "english": "Money",
+    "ogoni": "Kpugi",
+    "wordAudio": "/uploads/06d39f048ae34d44aced4e5a6c216142.webm",
+    "sentenceAudio": "/uploads/4aada9254bd746d9bdeacf2d7e2515e9.webm"
+  },
+  {
+    "english": "Student",
+    "ogoni": "Nwi-Torkpa",
+    "wordAudio": "/uploads/fc76f99b314b4eac9d7758036a983dc3.webm",
+    "sentenceAudio": "/uploads/d636540aa45e4b14a92ec5ca2dd5518e.webm"
+  },
+  {
+    "english": "Teacher",
+    "ogoni": "Nee Torgenu",
+    "wordAudio": "/uploads/0917d53e35fa4202a9cf1d2adb7ed3b6.webm",
+    "sentenceAudio": "/uploads/d4be83fd315344e5a2feff50717f5320.webm"
+  },
+  {
+    "english": "School",
+    "ogoni": "Tor Kpa",
+    "wordAudio": "/uploads/f0ce16ae75234b7aa7f6c8e01dc67533.webm",
+    "sentenceAudio": "/uploads/cce36bddbfff4fc7a8a0a96270bb386d.webm"
+  },
+  {
+    "english": "Church",
+    "ogoni": "Tor Bari",
+    "wordAudio": "/uploads/ba15669f1c9545929a0ccdce59020075.webm",
+    "sentenceAudio": "/uploads/5ac600da95184370b707900fca3559a8.webm"
+  },
+  {
+    "english": "God",
+    "ogoni": "Bari",
+    "wordAudio": "/uploads/d65ff034dba24aa28ac0cd7a1a1b5d2a.webm",
+    "sentenceAudio": "/uploads/397505b62ce3488a98d34810c357409a.webm"
+  },
+  {
+    "english": "Chief",
+    "ogoni": "Mene",
+    "wordAudio": "/uploads/43c0bd081666424aad38c131ab558359.webm",
+    "sentenceAudio": "/uploads/d934add61a40469da44a9cc932ea3be3.webm"
+  },
+  {
+    "english": "King",
+    "ogoni": "Mene",
+    "wordAudio": "/uploads/f1640db1173b4249b425f2e797ddcd5d.webm",
+    "sentenceAudio": "/uploads/f8307f7418534024bb68d4205bfee1a9.webm"
+  },
+  {
+    "english": "Proverb",
+    "ogoni": "kam",
+    "wordAudio": "/uploads/3af86e120e7b4c9cb5f4a83b80d707a5.webm",
+    "sentenceAudio": "/uploads/eade4359b0f5485fb994d5352ef71a97.webm"
+  },
+  {
+    "english": "Pound",
+    "ogoni": "Kùm",
+    "wordAudio": "/uploads/43d214d870ab46528358dab1e7c6999f.webm",
+    "sentenceAudio": "/uploads/b548ccb7fc654a00bf5ab93960598ef9.webm"
+  },
+  {
+    "english": "Sweep",
+    "ogoni": "Kpàe",
+    "wordAudio": "/uploads/ef7c5a528d2a4f73b0acdfd706e87618.webm",
+    "sentenceAudio": "/uploads/9ae4a2bccd9240f8853eee5e88e9c412.webm"
+  },
+  {
+    "english": "Dance",
+    "ogoni": "Yèb",
+    "wordAudio": "/uploads/bdd3a1202d8b48e082bef91db759e22e.webm",
+    "sentenceAudio": "/uploads/413c4fe5073a4edd871791753e5c5e89.webm"
+  },
+  {
+    "english": "Heart",
+    "ogoni": "Kpor",
+    "wordAudio": "/uploads/20b1b21602b9432a8d521d5a2b06ccbf.webm"
+  },
+  {
+    "english": "Leg",
+    "ogoni": "Ikp-tor",
+    "wordAudio": "/uploads/4aa209a8fbbf4007ae5c80f44d95b26e.webm",
+    "sentenceAudio": "/uploads/197bacee6be64313ab28f5c792ce1f53.webm"
+  },
+  {
+    "english": "Hand",
+    "ogoni": "Ba",
+    "wordAudio": "/uploads/1bc56b202bbb4e19baf0d04a846e2383.webm",
+    "sentenceAudio": "/uploads/19f4090c3abd43dcb4c7c688efcf98e3.webm"
+  },
+  {
+    "english": "Blood",
+    "ogoni": "Mii",
+    "wordAudio": "/uploads/f3941c6d17884b058e513e08e15399be.webm",
+    "sentenceAudio": "/uploads/94a561af492c4ef49489d2f3c3cb1688.webm"
+  }
+]

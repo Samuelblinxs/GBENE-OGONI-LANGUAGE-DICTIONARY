@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account - Khana Dictionary</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <div class="auth-header">
+            <div class="logo">GBENE OGONI</div>
+            <h2>Create your account</h2>
+            <p class="muted">Join 12+ contributors preserving Ogoni language</p>
+        </div>
+
+        <form id="createAccountForm" method="POST" action="/api/signup">
+            <div class="row">
+                <div>
+                    <label>First Name *</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Kaesor" required>
+                    <span class="error" id="firstNameError"></span>
+                </div>
+                <div>
+                    <label>Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Ledum" required>
+                    <span class="error" id="lastNameError"></span>
+                </div>
+            </div>
+
+            <label>Email or Phone *</label>
+            <input type="text" id="email" name="email" placeholder="kaesor@gmail.com or 080..." required>
+            <span class="error" id="emailError"></span>
+
+            <label>Village / LGA *</label>
+            <input type="text" id="location" name="location" placeholder="e.g. Bori, Khana LGA" required>
+
+            <label>I am a... *</label>
+            <select id="role" name="role" required>
+                <option value="">Select role</option>
+                <option value="contributor">Contributor - I will add words</option>
+                <option value="elder">Elder / Teacher - I verify words</option>
+                <option value="student">Student - I want to learn</option>
+            </select>
+
+            <label>Password (6 characters) *</label>
+            <div class="password-wrap">
+                <input type="password" id="password" name="password" placeholder="Exactly 6 letters or numbers" minlength="6" maxlength="6" pattern="[A-Za-z0-9]{6}" title="Use exactly 6 letters and/or numbers. Do not use special characters." required>
+                <button type="button" id="togglePassword">Show</button>
+            </div>
+            <p class="password-hint" id="passwordHint">Use exactly 6 characters: letters only, numbers only, or a mix. Special characters are not allowed.</p>
+            <div class="password-strength">
+                <div class="strength-bar"><div id="strengthFill"></div></div>
+                <span id="strengthText" class="muted small">Use exactly 6 letters and/or numbers</span>
+            </div>
+            <span class="error" id="passwordError"></span>
+
+            <label>Confirm Password *</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat password" required>
+            <span class="error" id="confirmError"></span>
+
+            <label class="checkbox">
+                <input type="checkbox" id="terms" required>
+                I agree to preserve Khana language respectfully and not add fake words.
+            </label>
+
+            <button type="submit" class="btn full" id="signupBtn">Create Account →</button>
+            <div id="authStatus"></div>
+        </form>
+
+            <p class="muted center" style="margin-top:18px">
+                Already have account? <a href="Login.html" style="color:#22c55e;text-decoration:none">Login instead</a> • 
+                <a href="index.html" style="color:#a1a1aa;text-decoration:none">Continue as guest</a>
+            </p>
+       
+    </div>
+</div>
+
+<script>
+    // auth.js - CLEAN & DEBUGABLE
+const form = document.getElementById('createAccountForm');
+const API_URL = "https://your-api.vercel.app"; // change later to real backend
+
+// Toggle password
+document.getElementById('togglePassword')?.addEventListener('click', function(){
+    const p = document.getElementById('password');
+    p.type = p.type === 'password' ? 'text' : 'password';
+    this.innerText = p.type === 'password' ? 'Show' : 'Hide';
+});
+
+// Show whether the password meets the six-character alphanumeric rule.
+document.getElementById('password')?.addEventListener('input', function(){
+    const val = this.value;
+    const fill = document.getElementById('strengthFill');
+    const text = document.getElementById('strengthText');
+    const valid = /^[A-Za-z0-9]{6}$/.test(val);
+    fill.style.width = Math.min(100, val.length / 6 * 100) + '%';
+    fill.style.background = valid ? '#22c55e' : '#ef4444';
+    text.innerText = valid ? 'Password format is valid' : 'Exactly 6 letters and/or numbers; no special characters';
+});
+
+// Submit
+form?.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    console.log("DEBUG: Submit clicked");
+
+    const data = {
+        firstName: document.getElementById('firstName').value.trim(),
+        lastName: document.getElementById('lastName').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        location: document.getElementById('location').value.trim(),
+        role: document.getElementById('role').value,
+        password: document.getElementById('password').value,
+        confirm: document.getElementById('confirmPassword').value,
+        terms: document.getElementById('terms').checked
+    };
+    console.log("DEBUG form data:", data);
+
+    let valid = true;
+    document.querySelectorAll('.error').forEach(el=>el.innerText='');
+
+    if(data.firstName.length < 2){ document.getElementById('firstNameError').innerText='Too short'; valid=false; }
+    if(!/^[A-Za-z0-9]{6}$/.test(data.password)){
+        document.getElementById('passwordError').innerText='Use exactly 6 letters and/or numbers. Special characters are not allowed.';
+        valid=false;
+    }
+    if(data.password !== data.confirm){ document.getElementById('confirmError').innerText='Passwords no match'; valid=false; }
+    if(!data.terms){ alert("Agree to terms"); valid=false; }
+
+    if(!valid){ console.log("DEBUG: Validation failed"); return; }
+
+    const btn = document.getElementById('signupBtn');
+    btn.innerText = 'Creating...';
+    btn.disabled = true;
+
+    try {
+        const formData = new FormData(form);
+        const response = await fetch('/api/signup', {
+            method: 'POST',
+            body: formData,
+            credentials: 'same-origin'
+        });
+
+        const text = await response.text();
+
+        const accounts = JSON.parse(localStorage.getItem('gbene_accounts') || '[]');
+        const accountExists = accounts.some(account => account.email.toLowerCase() === data.email.toLowerCase());
+
+        if (!accountExists) {
+            accounts.push({
+                firstName: data.firstName,
+                lastName: data.lastName,
+                email: data.email,
+                password: data.password,
+                location: data.location,
+                role: data.role,
+                createdAt: new Date().toISOString()
+            });
+            localStorage.setItem('gbene_accounts', JSON.stringify(accounts));
+        }
+
+        localStorage.setItem('khana_name', data.firstName + ' ' + data.lastName);
+        localStorage.setItem('khana_email', data.email);
+        localStorage.setItem('khana_role', data.role);
+        localStorage.setItem('khana_logged', 'true');
+        localStorage.setItem('gbene_user_location', data.location);
+        localStorage.setItem('gbene_created_at', new Date().toISOString());
+
+        if (response.redirected || response.ok) {
+            const userName = (data.firstName || 'User') + ' ' + (data.lastName || '');
+            localStorage.setItem('gbene_logged_in', 'true');
+            localStorage.setItem('gbene_user_name', userName.trim());
+            localStorage.setItem('gbene_user_email', data.email);
+            localStorage.setItem('gbene_user_location', data.location);
+            localStorage.setItem('gbene_created_at', new Date().toISOString());
+            document.getElementById('authStatus').innerHTML = `<p style="color:#22c55e;margin-top:12px">✓ Account created for ${data.firstName}! Redirecting...</p>`;
+            setTimeout(() => location.href = 'userdashboard 1.html', 800);
+            return;
+        }
+
+        if (text && text.toLowerCase().includes('already exists')) {
+            throw new Error('This account already exists. Please login instead.');
+        }
+
+        throw new Error(text || 'Signup failed. Please try again.');
+    } catch (err) {
+        console.error('DEBUG ERROR:', err);
+        document.getElementById('authStatus').innerHTML = `<p style="color:#ef4444">Error: ${err.message}</p>`;
+        btn.innerText = 'Create Account →';
+        btn.disabled = false;
+    }
+});
+
+</script>
+</body>
+</html>
